@@ -1,4 +1,4 @@
-{% set version = '1.5.10' %}
+{% set version = '1.5.12' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,20 +10,21 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/LogicReg_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/LogicReg/LogicReg_{{ version }}.tar.gz
-  sha256: 8762a7d4d8094dc2762d288b6629c78150f92a00f2a1a804cbbc1dcde9e4e996
+  sha256: daeb6638579bcf26b92bbe4a5dab9f3ba79c976445e03972f90458fb26f6931c
 
 build:
   merge_build_host: True  # [win]
-  number: 1000
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('fortran') }}  # [not win]
-    - {{native}}toolchain        # [win]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('fortran') }}        # [not win]
+    - {{ compiler('m2w64_fortran') }}  # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
     - {{posix}}sed               # [win]
@@ -45,7 +46,9 @@ test:
 about:
   home: https://CRAN.R-project.org/package=LogicReg
   license: GPL (>= 2)
-  summary: Routines for fitting Logic Regression models.
+  summary: Routines for fitting Logic Regression models. Logic Regression is described in Ruczinski,
+    Kooperberg, and LeBlanc (2003) <DOI:10.1198/1061860032238>. Monte Carlo Logic Regression
+    is described in and Kooperberg and Ruczinski (2005) <DOI:10.1002/gepi.20042>.
   license_family: GPL3
   license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
@@ -54,16 +57,16 @@ extra:
     - conda-forge/r
 
 # Package: LogicReg
-# Version: 1.5.10
-# Date: 2018-06-14
+# Version: 1.5.12
+# Date: 2019-06-17
 # Title: Logic Regression
 # Author: Charles Kooperberg <clk@fredhutch.org> and Ingo Ruczinski <ingo@jhu.edu>
 # Maintainer: Charles Kooperberg <clk@fredhutch.org>
 # Depends: R (>= 2.10), survival
 # Imports: stats, graphics, utils, grDevices
-# Description: Routines for fitting Logic Regression models.
+# Description: Routines for fitting Logic Regression models. Logic Regression is described in Ruczinski, Kooperberg, and LeBlanc (2003) <DOI:10.1198/1061860032238>. Monte Carlo Logic Regression is described in and Kooperberg and Ruczinski (2005) <DOI:10.1002/gepi.20042>.
 # License: GPL (>= 2)
 # NeedsCompilation: yes
-# Packaged: 2018-06-14 17:09:42 UTC; clk
+# Packaged: 2019-06-17 23:30:55 UTC; clk
 # Repository: CRAN
-# Date/Publication: 2018-06-14 21:26:21 UTC
+# Date/Publication: 2019-06-18 21:52:03 UTC

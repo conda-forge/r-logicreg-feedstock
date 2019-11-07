@@ -1,4 +1,4 @@
-{% set version = '1.5.12' %}
+{% set version = "1.6.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/LogicReg_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/LogicReg/LogicReg_{{ version }}.tar.gz
-  sha256: daeb6638579bcf26b92bbe4a5dab9f3ba79c976445e03972f90458fb26f6931c
+  sha256: a07f13d77aa3e515d4fe40cb872c1ea255e74c052155c77c6ce40a6345fe09ab
 
 build:
   merge_build_host: True  # [win]
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/

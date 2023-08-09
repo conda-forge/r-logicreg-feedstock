@@ -3,6 +3,7 @@ About r-logicreg-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-logicreg-feedstock/blob/main/LICENSE.txt)
 
+
 About r-logicreg
 ----------------
 
@@ -11,6 +12,7 @@ Home: https://CRAN.R-project.org/package=LogicReg
 Package license: GPL-2.0-or-later
 
 Summary: Routines for fitting Logic Regression models. Logic Regression is described in Ruczinski, Kooperberg, and LeBlanc (2003) <DOI:10.1198/1061860032238>. Monte Carlo Logic Regression is described in and Kooperberg and Ruczinski (2005) <DOI:10.1002/gepi.20042>.
+
 About r-logicreg
 ----------------
 
